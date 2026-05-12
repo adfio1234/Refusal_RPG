@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3382722663031780216}
   - component: {fileID: 1523508097932245475}
   - component: {fileID: 3296040540856132180}
+  - component: {fileID: 6527126692784964461}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2943281558264230710}
@@ -140,7 +141,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &3296040540856132180
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -187,6 +188,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6527126692784964461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197316515149243854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71e7d89a505020e44961d28f2d4e9f79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerRespawn
+  spawnPoint: {fileID: 0}
 --- !u!1 &1343594902318791271
 GameObject:
   m_ObjectHideFlags: 0
