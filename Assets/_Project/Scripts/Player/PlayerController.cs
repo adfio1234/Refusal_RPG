@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerController: MonoBehaviour
 {
-
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 12f;
     [SerializeField] private Transform groundCheck;
@@ -12,31 +11,26 @@ public class PlayerController: MonoBehaviour
     private float moveInput;
     private bool isGrounded;
 
-    private void Awake()
-    {
+    private void Awake() {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
-    {
+    private void Update() {
         moveInput = Input.GetAxisRaw("Horizontal");
-
-        Debug.Log(moveInput);
-
         isGrounded = Physics2D.OverlapCircle(
             groundCheck.position,
             0.15f,
-            groundLayer);
+            groundLayer
+        );
 
-        if(Input.GetButtonDown("Jump")&&isGrounded)
-        {
+        Debug.Log($"Jump: {Input.GetButtonDown("Jump")}, Grounded: {isGrounded}");
+
+        if(Input.GetButtonDown("Jump")&&isGrounded) {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
-
     }
 
-    private void FixedUpdate()
-    {
+    private void FixedUpdate() {
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
     }
 
