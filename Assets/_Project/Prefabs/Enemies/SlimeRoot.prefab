@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6990612053709755259}
+  - component: {fileID: 7771690023174595140}
   m_Layer: 0
   m_Name: SlimeRoot
   m_TagString: Untagged
@@ -34,6 +35,20 @@ Transform:
   - {fileID: 3344431415835666435}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7771690023174595140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65843593263189982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f3d17031d870d4493b23b77ab596a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 40
+  destroyOnDeath: 1
 --- !u!1 &824658468043729420
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,6 +92,7 @@ GameObject:
   - component: {fileID: 1938492227951360400}
   - component: {fileID: 4415720487218230173}
   - component: {fileID: 1262892274390557580}
+  - component: {fileID: 8031412821135560309}
   m_Layer: 6
   m_Name: Slime
   m_TagString: Untagged
@@ -195,7 +211,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 552323af2a174dc489c47a39e60d330d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -231,6 +247,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8031412821135560309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3506714475809467656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c447cf366763643ab55d7d4b7eeac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyPatrol
+  leftPoint: {fileID: 5710887199171281651}
+  rightPoint: {fileID: 3344431415835666435}
+  patrolSpeed: 2
+  reachDistance: 0.1
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  detectRange: 4.5
+  chaseSpeed: 3
+  attackDamage: 10
+  attackRange: 0.9
+  attackCooldown: 1.2
+  attackHitDelay: 0.25
+  attackMotionDuration: 0.5
 --- !u!1 &8269303364776612943
 GameObject:
   m_ObjectHideFlags: 0
