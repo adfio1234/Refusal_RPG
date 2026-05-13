@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController: MonoBehaviour
@@ -12,7 +13,12 @@ public class PlayerController: MonoBehaviour
     [SerializeField] private float groundCheckRadius = 0.15f;
 
     [Header("Attack")]
+    [SerializeField] private int attackDamage = 20;
     [SerializeField] private float attackDuration = 0.2f;
+    [SerializeField] private float attackRange = 0.6f;
+    [SerializeField] private float attackPointDistance = 0.8f;
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private LayerMask enemyLayer;
 
     [Header("Dodge")]
     [SerializeField] private float dodgeSpeed = 15f;
@@ -40,6 +46,7 @@ public class PlayerController: MonoBehaviour
     private void Update() {
         CheckGround();
         HandleInput();
+        UpdateAttackPointPosition();
         UpdateTimers();
     }
 
@@ -78,8 +85,41 @@ public class PlayerController: MonoBehaviour
     {
         isAttacking = true;
         attackTimer = attackDuration;
+        if(attackPoint == null)
+        {
+            Debug.LogWarning("AttackPoint가 연결되지 않았습니다.");
+            return;
+        }
 
-        Debug.Log("Attack");
+        Collider2D[] hits = Physics2D.OverlapCircleAll(
+            attackPoint.position,
+            attackRange,
+            enemyLayer
+        );
+
+        HashSet<Health> damagedTargets = new HashSet<Health>();
+        foreach(Collider2D hit in hits)
+        {
+            Health enemyHealth = hit.GetComponentInParent<Health>();
+            if(enemyHealth == null) continue;
+            if(damagedTargets.Contains(enemyHealth)) continue;
+
+            enemyHealth.TakeDamage(attackDamage);
+            damagedTargets.Add(enemyHealth);
+        }
+
+        Debug.Log($"Player Attack. Hit Count: {damagedTargets.Count}");
+    }
+
+    private void UpdateAttackPointPosition()
+    {
+        if (attackPoint == null) return;
+
+        attackPoint.localPosition = new Vector3(
+            attackPointDistance * facingDirection,
+            attackPoint.localPosition.y,
+            attackPoint.localPosition.z
+        );
     }
 
     private void Dodge()
@@ -118,9 +158,16 @@ public class PlayerController: MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        if (groundCheck == null) return;
+        if(groundCheck != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        }
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        if(attackPoint != null)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        }
     }
 }
