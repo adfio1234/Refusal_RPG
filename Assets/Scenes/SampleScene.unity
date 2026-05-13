@@ -129,34 +129,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6175915315823407634, guid: 4af4777fb3f5f4c489c484db06c1fd3c, type: 3}
   m_PrefabInstance: {fileID: 2239809906216199314}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &422954614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 422954607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57f3d17031d870d4493b23b77ab596a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 100
-  destroyOnDeath: 1
---- !u!114 &422954615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 422954607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57f3d17031d870d4493b23b77ab596a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 100
-  destroyOnDeath: 1
 --- !u!114 &422954616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,14 +167,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyPatrol
   leftPoint: {fileID: 504411766}
   rightPoint: {fileID: 1499291764}
-  moveSpeed: 2
+  patrolSpeed: 2
   reachDistance: 0.1
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
   detectRange: 4.5
   chaseSpeed: 3
-  stopDistance: 0.4
+  attackDamage: 10
+  attackRange: 0.9
+  attackCooldown: 1.2
+  attackHitDelay: 0.25
+  attackMotionDuration: 0.5
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,12 +475,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1197316515149243854, guid: 4af4777fb3f5f4c489c484db06c1fd3c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 422954616}
-    - targetCorrespondingSourceObject: {fileID: 1197316515149243854, guid: 4af4777fb3f5f4c489c484db06c1fd3c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 422954615}
-    - targetCorrespondingSourceObject: {fileID: 1197316515149243854, guid: 4af4777fb3f5f4c489c484db06c1fd3c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 422954614}
   m_SourcePrefab: {fileID: 100100000, guid: 4af4777fb3f5f4c489c484db06c1fd3c, type: 3}
 --- !u!1001 &3587721687571659298
 PrefabInstance:
