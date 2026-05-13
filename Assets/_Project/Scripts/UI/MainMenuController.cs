@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour
 {
     [Header("Scene")]
-    [SerializeField] private string gameSceneName = "Game";
+    [SerializeField] private string loadingSceneName = "Loading";
 
     [Header("Fade")]
     [SerializeField] private CanvasGroup fadeGroup;
-    [SerializeField] private float fadeDuration = 1f;
+    [SerializeField] private float fadeDuration = 0.2f;
 
     [Header("Sound")]
     [SerializeField] private AudioSource audioSource;
@@ -59,7 +59,7 @@ public class MainMenuController : MonoBehaviour
             fadeGroup.alpha = 1f;
         }
 
-        SceneManager.LoadScene(gameSceneName);
+        SceneManager.LoadScene(loadingSceneName);
     }
 
     public void QuitGame()
