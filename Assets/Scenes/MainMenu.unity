@@ -646,8 +646,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a06b6ac057ac64fb4c6ef25f063dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuController
-  gameSceneName: Game
-  fadeGroup: {fileID: 2124645878}
+  loadingSceneName: Loading
+  fadeGroup: {fileID: 0}
   fadeDuration: 1
   audioSource: {fileID: 0}
   buttonClickSound: {fileID: 0}
@@ -828,9 +828,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5833623314619141752, guid: 5f73a31f5ef763346b5925f98070929c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5833623314619141752, guid: 5f73a31f5ef763346b5925f98070929c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1694696002}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5833623314619141752, guid: 5f73a31f5ef763346b5925f98070929c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartGame
+      objectReference: {fileID: 0}
     - target: {fileID: 7056352327029890958, guid: 5f73a31f5ef763346b5925f98070929c, type: 3}
       propertyPath: m_Name
       value: MainMenu
