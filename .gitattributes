@@ -65,6 +65,7 @@ Packages/packages-lock.json linguist-generated
 # Unity LFS
 *.cubemap               lfs
 *.unitypackage          lfs
+*.bundle		lfs
 # 3D models
 *.3dm                   lfs
 *.3ds                   lfs

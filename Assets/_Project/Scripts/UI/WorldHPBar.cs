@@ -1,9 +1,19 @@
 using UnityEngine;
 
-public class HPBarUI : MonoBehaviour
+public class WorldHPBar : MonoBehaviour
 {
     [SerializeField] private Health targetHealth;
-    [SerializeField] private RectTransform fillRect;
+    [SerializeField] private Transform fillTransform;
+
+    private Vector3 originalFillScale;
+
+    private void Awake()
+    {
+        if (fillTransform != null)
+        {
+            originalFillScale = fillTransform.localScale;
+        }
+    }
 
     private void OnEnable()
     {
@@ -24,11 +34,15 @@ public class HPBarUI : MonoBehaviour
 
     private void UpdateHPBar(int currentHealth, int maxHealth)
     {
-        if (fillRect == null) return;
+        if (fillTransform == null) return;
 
         float ratio = (float)currentHealth / maxHealth;
         ratio = Mathf.Clamp01(ratio);
 
-        fillRect.localScale = new Vector3(ratio, 1f, 1f);
+        fillTransform.localScale = new Vector3(
+            originalFillScale.x * ratio,
+            originalFillScale.y,
+            originalFillScale.z
+        );
     }
 }
