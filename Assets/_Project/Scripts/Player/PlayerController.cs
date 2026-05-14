@@ -39,14 +39,20 @@ public class PlayerController: MonoBehaviour
     private float dodgeTimer;
     private float dodgeCooldownTimer;
 
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+        
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        spriteRenderer=GetComponent<SpriteRenderer > ();
     }
 
     private void Update() {
         CheckGround();
         HandleInput();
         UpdateAttackPointPosition();
+        UpdateAnimation();
         UpdateTimers();
     }
 
@@ -59,10 +65,33 @@ public class PlayerController: MonoBehaviour
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
     }
 
+    private void UpdateAnimation()
+    {
+        if (animator != null)
+        {
+            bool isRunning = Mathf.Abs(moveInput) > 0.01f;
+            animator.SetBool("IsRunning", isRunning);
+        }
+
+        if(spriteRenderer!=null)
+        {
+            if(moveInput>0)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else if(moveInput<0)
+            {
+                spriteRenderer.flipX = true;
+            }
+        }
+        
+    }
+
     private void HandleInput() {
         moveInput = Input.GetAxisRaw("Horizontal");
         if(moveInput != 0) facingDirection = Mathf.Sign(moveInput);
 
+        if (Input.GetKeyDown(KeyCode.T)&&isGrounded) Debug.Log("IsGround");
         if (Input.GetKeyDown(KeyCode.Z) && isGrounded && !isDodging) Jump();
         if (Input.GetKeyDown(KeyCode.X) && !isAttacking && !isDodging) Attack();
         if (Input.GetKeyDown(KeyCode.C) && CanDodge()) Dodge();
@@ -79,6 +108,7 @@ public class PlayerController: MonoBehaviour
     private void Jump()
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        Debug.Log("Jump");
     }
 
     private void Attack()
@@ -96,6 +126,8 @@ public class PlayerController: MonoBehaviour
             attackRange,
             enemyLayer
         );
+
+        if (animator != null) animator.SetTrigger("Attack");
 
         HashSet<Health> damagedTargets = new HashSet<Health>();
         foreach(Collider2D hit in hits)
