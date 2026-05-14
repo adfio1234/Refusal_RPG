@@ -1,112 +1,109 @@
 fileFormatVersion: 2
-guid: 83696924d2271d048898213b83f01ba0
+guid: df34a1d883952a2488abea96df06d1c7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9183691191101647484
-    second: player_sword-Photoroom_0
+      213: -368401321789775361
+    second: Decoration_0
   - first:
-      213: 5719974660971631163
-    second: player_sword-Photoroom_1
+      213: -4206819594563279181
+    second: Decoration_1
   - first:
-      213: 7793809954783109018
-    second: player_sword-Photoroom_2
+      213: 566846315969825457
+    second: Decoration_2
   - first:
-      213: 2808751497562940141
-    second: player_sword-Photoroom_3
+      213: -983121831306131238
+    second: Decoration_3
   - first:
-      213: 5993816058237331323
-    second: player_sword-Photoroom_4
+      213: -9150735976156324452
+    second: Decoration_4
   - first:
-      213: 1116724665278370127
-    second: player_sword-Photoroom_5
+      213: -1050146069433883852
+    second: Decoration_5
   - first:
-      213: 1604913501756280747
-    second: player_sword-Photoroom_6
+      213: 3754962894339544984
+    second: Decoration_6
   - first:
-      213: -6936402313083324472
-    second: player_sword-Photoroom_7
+      213: 3872367889646283263
+    second: Decoration_7
   - first:
-      213: -1429910938358779256
-    second: player_sword-Photoroom_8
+      213: -389087280608379294
+    second: Decoration_8
   - first:
-      213: 8877766160776027704
-    second: player_sword-Photoroom_9
+      213: 8002333480267911400
+    second: Decoration_9
   - first:
-      213: 1819732443877415913
-    second: player_sword-Photoroom_10
+      213: 4030208814000181183
+    second: Decoration_10
   - first:
-      213: 5793551555365319280
-    second: player_sword-Photoroom_11
+      213: -7926080337853386996
+    second: Decoration_11
   - first:
-      213: 2042411147569541775
-    second: player_sword-Photoroom_12
+      213: -5957907480768474131
+    second: Decoration_12
   - first:
-      213: 9180163028910415866
-    second: player_sword-Photoroom_13
+      213: -8952722625416497748
+    second: Decoration_13
   - first:
-      213: -2108078593013695039
-    second: player_sword-Photoroom_14
+      213: -6474815905490174710
+    second: Decoration_14
   - first:
-      213: 2671571532330012320
-    second: player_sword-Photoroom_15
+      213: 2051757784263316258
+    second: Decoration_15
   - first:
-      213: 6049795583520829650
-    second: player_sword-Photoroom_16
+      213: 8538422899418973946
+    second: Decoration_16
   - first:
-      213: -75746977499122362
-    second: player_sword-Photoroom_17
+      213: 2558546051751004457
+    second: Decoration_17
   - first:
-      213: -3481959925266997193
-    second: player_sword-Photoroom_18
+      213: -1454307687701597747
+    second: Decoration_18
   - first:
-      213: -4232145659031121922
-    second: player_sword-Photoroom_19
+      213: 429415279605046377
+    second: Decoration_19
   - first:
-      213: 2871619500180754574
-    second: player_sword-Photoroom_20
+      213: 5575579087702807243
+    second: Decoration_20
   - first:
-      213: -4082668368961970515
-    second: player_sword-Photoroom_21
+      213: -545380113026382421
+    second: Decoration_21
   - first:
-      213: 7952282158340513190
-    second: player_sword-Photoroom_22
+      213: 7686115043111144839
+    second: Decoration_22
   - first:
-      213: -5311040388227379648
-    second: player_sword-Photoroom_23
+      213: 4695875553099044208
+    second: Decoration_23
   - first:
-      213: -1955766903242920274
-    second: player_sword-Photoroom_24
+      213: 1356666032084300529
+    second: Decoration_24
   - first:
-      213: -771022523033011424
-    second: player_sword-Photoroom_25
+      213: 7081662665494935325
+    second: Decoration_25
   - first:
-      213: 1419559848053628138
-    second: player_sword-Photoroom_26
+      213: -7001666877434044512
+    second: Decoration_26
   - first:
-      213: -6305066187933782293
-    second: player_sword-Photoroom_27
+      213: 7599613549713535892
+    second: Decoration_27
   - first:
-      213: -6702232171158200757
-    second: player_sword-Photoroom_28
+      213: 1636361473550653864
+    second: Decoration_28
   - first:
-      213: 4249256731154557421
-    second: player_sword-Photoroom_29
+      213: 250391886309440160
+    second: Decoration_29
   - first:
-      213: 768809563864893605
-    second: player_sword-Photoroom_30
+      213: -5171851249027356276
+    second: Decoration_30
   - first:
-      213: 4931683980207489969
-    second: player_sword-Photoroom_31
+      213: -6087425619873452366
+    second: Decoration_31
   - first:
-      213: -4269577123148761109
-    second: player_sword-Photoroom_32
+      213: 1282098462555372498
+    second: Decoration_32
   - first:
-      213: 7571744919348456883
-    second: player_sword-Photoroom_33
-  - first:
-      213: -6542198693012964536
-    second: player_sword-Photoroom_34
+      213: -4280765825412746780
+    second: Decoration_33
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,7 +136,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -150,10 +147,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -215,13 +212,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_sword-Photoroom_1
+      name: Decoration_0
       rect:
         serializedVersion: 2
-        x: 192
-        y: 871
-        width: 96
-        height: 142
+        x: 42
+        y: 733
+        width: 114
+        height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b32137ff5ae616f40800000000000000
-      internalID: 5719974660971631163
+      spriteID: ff1afef13fc23eaf0800000000000000
+      internalID: -368401321789775361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_2
+      name: Decoration_1
       rect:
         serializedVersion: 2
-        x: 374
-        y: 871
-        width: 96
-        height: 143
+        x: 1225
+        y: 341
+        width: 65
+        height: 112
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,20 +249,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a9f10c94cdc292c60800000000000000
-      internalID: 7793809954783109018
+      spriteID: 3b627ef0edf5e95c0800000000000000
+      internalID: -4206819594563279181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_3
+      name: Decoration_2
       rect:
         serializedVersion: 2
-        x: 545
-        y: 870
-        width: 94
-        height: 140
+        x: 1290
+        y: 341
+        width: 65
+        height: 112
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: de2e59a0b90baf620800000000000000
-      internalID: 2808751497562940141
+      spriteID: 1bace9998b7ddd700800000000000000
+      internalID: 566846315969825457
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_4
+      name: Decoration_5
       rect:
         serializedVersion: 2
-        x: 1081
-        y: 680
-        width: 119
-        height: 141
+        x: 37
+        y: 219
+        width: 145
+        height: 254
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,20 +293,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b77a448c2ff4e2350800000000000000
-      internalID: 5993816058237331323
+      spriteID: 433ee19b6b12d61f0800000000000000
+      internalID: -1050146069433883852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_6
+      name: Decoration_7
       rect:
         serializedVersion: 2
-        x: 172
-        y: 687
-        width: 117
-        height: 133
+        x: 216
+        y: 217
+        width: 253
+        height: 235
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,20 +315,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: baf496f935cc54610800000000000000
-      internalID: 1604913501756280747
+      spriteID: ff9eef5341a6db530800000000000000
+      internalID: 3872367889646283263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_7
+      name: Decoration_8
       rect:
         serializedVersion: 2
-        x: 361
-        y: 685
+        x: 481
+        y: 244
+        width: 209
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26ef6b40e2fa99af0800000000000000
+      internalID: -389087280608379294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Decoration_9
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 268
         width: 122
-        height: 135
+        height: 184
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,20 +359,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8c7787dc8d2fcbf90800000000000000
-      internalID: -6936402313083324472
+      spriteID: 8e09591f6effd0f60800000000000000
+      internalID: 8002333480267911400
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_8
+      name: Decoration_10
       rect:
         serializedVersion: 2
-        x: 538
-        y: 687
-        width: 126
-        height: 129
+        x: 821
+        y: 335
+        width: 127
+        height: 121
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,63 +381,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 882fdaad39fe72ce0800000000000000
-      internalID: -1429910938358779256
+      spriteID: fbf0129309d2ee730800000000000000
+      internalID: 4030208814000181183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_9
+      name: Decoration_11
       rect:
         serializedVersion: 2
-        x: 727
-        y: 682
-        width: 123
-        height: 137
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 83ed90c6949243b70800000000000000
-      internalID: 8877766160776027704
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_sword-Photoroom_10
-      rect:
-        serializedVersion: 2
-        x: 917
-        y: 680
-        width: 126
-        height: 129
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9eb119f240df04910800000000000000
-      internalID: 1819732443877415913
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_sword-Photoroom_12
-      rect:
-        serializedVersion: 2
-        x: 194
-        y: 486
-        width: 165
+        x: 950
+        y: 312
+        width: 79
         height: 139
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -428,20 +403,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f823e281e1a185c10800000000000000
-      internalID: 2042411147569541775
+      spriteID: c0f6a094de7e00290800000000000000
+      internalID: -7926080337853386996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_13
+      name: Decoration_12
       rect:
         serializedVersion: 2
-        x: 385
-        y: 488
-        width: 164
-        height: 126
+        x: 1045
+        y: 309
+        width: 104
+        height: 144
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -450,20 +425,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aff116ed2ad766f70800000000000000
-      internalID: 9180163028910415866
+      spriteID: de3172c66b2415da0800000000000000
+      internalID: -5957907480768474131
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_14
+      name: Decoration_13
       rect:
         serializedVersion: 2
-        x: 580
-        y: 486
-        width: 255
-        height: 129
+        x: 1159
+        y: 341
+        width: 67
+        height: 112
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -472,20 +447,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1cd30d050b99eb2e0800000000000000
-      internalID: -2108078593013695039
+      spriteID: ca5727ba43a81c380800000000000000
+      internalID: -8952722625416497748
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_15
+      name: Decoration_14
       rect:
         serializedVersion: 2
-        x: 831
-        y: 483
-        width: 160
-        height: 128
+        x: 695
+        y: 219
+        width: 115
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -494,20 +469,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ae83907724531520800000000000000
-      internalID: 2671571532330012320
+      spriteID: a0d753f2d35d426a0800000000000000
+      internalID: -6474815905490174710
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_16
+      name: Decoration_15
       rect:
         serializedVersion: 2
-        x: 1021
-        y: 483
-        width: 171
-        height: 118
+        x: 824
+        y: 219
+        width: 71
+        height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -516,20 +491,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2d07c7fa70135f350800000000000000
-      internalID: 6049795583520829650
+      spriteID: 223582885de497c10800000000000000
+      internalID: 2051757784263316258
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_17
+      name: Decoration_16
       rect:
         serializedVersion: 2
-        x: 1220
-        y: 482
-        width: 107
-        height: 134
+        x: 896
+        y: 219
+        width: 50
+        height: 49
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -538,20 +513,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 645fa597684e2fef0800000000000000
-      internalID: -75746977499122362
+      spriteID: af6cde573629e7670800000000000000
+      internalID: 8538422899418973946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_18
+      name: Decoration_17
       rect:
         serializedVersion: 2
-        x: 191
-        y: 289
-        width: 95
-        height: 177
+        x: 946
+        y: 219
+        width: 42
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -560,20 +535,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 730a05c65e79dafc0800000000000000
-      internalID: -3481959925266997193
+      spriteID: 929c81c0418c18320800000000000000
+      internalID: 2558546051751004457
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_19
+      name: Decoration_18
       rect:
         serializedVersion: 2
-        x: 354
-        y: 300
-        width: 10
-        height: 9
+        x: 989
+        y: 219
+        width: 41
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -582,20 +557,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eff0dbb22f56445c0800000000000000
-      internalID: -4232145659031121922
+      spriteID: dc13d600dd241dbe0800000000000000
+      internalID: -1454307687701597747
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_20
+      name: Decoration_19
       rect:
         serializedVersion: 2
-        x: 369
-        y: 290
-        width: 126
-        height: 141
+        x: 1031
+        y: 219
+        width: 43
+        height: 58
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -604,151 +579,129 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e80db5e88ba0ad720800000000000000
-      internalID: 2871619500180754574
+      spriteID: 96cdbf1fbe695f500800000000000000
+      internalID: 429415279605046377
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_21
+      name: Decoration_20
       rect:
         serializedVersion: 2
-        x: 580
-        y: 290
+        x: 1076
+        y: 219
+        width: 42
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc25f9bb3af606d40800000000000000
+      internalID: 5575579087702807243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Decoration_21
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 225
+        width: 43
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba5008f3dab6e68f0800000000000000
+      internalID: -545380113026382421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Decoration_22
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 222
+        width: 81
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78d0d6fa8e09aaa60800000000000000
+      internalID: 7686115043111144839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Decoration_23
+      rect:
+        serializedVersion: 2
+        x: 1247
+        y: 220
+        width: 41
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 075d8eb8fe91b2140800000000000000
+      internalID: 4695875553099044208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Decoration_24
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 217
+        width: 57
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f239397198d3d210800000000000000
+      internalID: 1356666032084300529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Decoration_25
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 177
         width: 116
-        height: 134
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dae5c44dfb27757c0800000000000000
-      internalID: -4082668368961970515
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_sword-Photoroom_22
-      rect:
-        serializedVersion: 2
-        x: 799
-        y: 290
-        width: 101
-        height: 138
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6ad10917d7e2c5e60800000000000000
-      internalID: 7952282158340513190
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_sword-Photoroom_24
-      rect:
-        serializedVersion: 2
-        x: 188
-        y: 98
-        width: 100
-        height: 141
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eae6db41d58bbd4e0800000000000000
-      internalID: -1955766903242920274
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_sword-Photoroom_25
-      rect:
-        serializedVersion: 2
-        x: 290
-        y: 165
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 02bbac0b917cc45f0800000000000000
-      internalID: -771022523033011424
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_sword-Photoroom_26
-      rect:
-        serializedVersion: 2
-        x: 359
-        y: 98
-        width: 96
-        height: 141
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aecd4a0292a43b310800000000000000
-      internalID: 1419559848053628138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_sword-Photoroom_27
-      rect:
-        serializedVersion: 2
-        x: 439
-        y: 159
-        width: 23
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bee61ee25b7ef78a0800000000000000
-      internalID: -6305066187933782293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_sword-Photoroom_28
-      rect:
-        serializedVersion: 2
-        x: 440
-        y: 165
-        width: 22
         height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -758,20 +711,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b4e9beba953ecf2a0800000000000000
-      internalID: -6702232171158200757
+      spriteID: d17b8fb8cae174260800000000000000
+      internalID: 7081662665494935325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_29
+      name: Decoration_26
       rect:
         serializedVersion: 2
-        x: 444
-        y: 148
-        width: 15
-        height: 12
+        x: 306
+        y: 36
+        width: 293
+        height: 143
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -780,20 +733,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: de9a7e3cb7468fa30800000000000000
-      internalID: 4249256731154557421
+      spriteID: 0afdce6421515de90800000000000000
+      internalID: -7001666877434044512
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_30
+      name: Decoration_27
       rect:
         serializedVersion: 2
-        x: 462
-        y: 165
-        width: 9
-        height: 7
+        x: 608
+        y: 36
+        width: 28
+        height: 143
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -802,20 +755,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5a8071a993c5baa00800000000000000
-      internalID: 768809563864893605
+      spriteID: 493bbec4240477960800000000000000
+      internalID: 7599613549713535892
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_31
+      name: Decoration_28
       rect:
         serializedVersion: 2
-        x: 541
-        y: 98
-        width: 102
-        height: 124
+        x: 653
+        y: 36
+        width: 30
+        height: 143
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -824,20 +777,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1b380c8637cd07440800000000000000
-      internalID: 4931683980207489969
+      spriteID: 8a91f13271685b610800000000000000
+      internalID: 1636361473550653864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_32
+      name: Decoration_29
       rect:
         serializedVersion: 2
-        x: 625
-        y: 149
-        width: 24
-        height: 23
+        x: 686
+        y: 36
+        width: 92
+        height: 145
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -846,20 +799,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: be775994a3a6fb4c0800000000000000
-      internalID: -4269577123148761109
+      spriteID: 0aa3d1e0812997300800000000000000
+      internalID: 250391886309440160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_33
+      name: Decoration_30
       rect:
         serializedVersion: 2
-        x: 650
-        y: 153
-        width: 9
-        height: 7
+        x: 777
+        y: 36
+        width: 83
+        height: 145
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -868,20 +821,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3bd22a723ed341960800000000000000
-      internalID: 7571744919348456883
+      spriteID: c89609ec0b4e938b0800000000000000
+      internalID: -5171851249027356276
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_sword-Photoroom_34
+      name: Decoration_31
       rect:
         serializedVersion: 2
-        x: 724
-        y: 98
-        width: 95
-        height: 109
+        x: 873
+        y: 36
+        width: 43
+        height: 143
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -890,8 +843,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 84bffe463f07535a0800000000000000
-      internalID: -6542198693012964536
+      spriteID: 2bea4dab6ae158ba0800000000000000
+      internalID: -6087425619873452366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Decoration_32
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 38
+        width: 222
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dbffa342cdeac110800000000000000
+      internalID: 1282098462555372498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Decoration_33
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 36
+        width: 17
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e134a9892aa794c0800000000000000
+      internalID: -4280765825412746780
       vertices: []
       indices: 
       edges: []
@@ -900,7 +897,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f116cbac95079a8419246bc7ce8d0412
+    spriteID: 12e727fc523c18a429f76be38369fd91
     internalID: 0
     vertices: []
     indices: 
@@ -908,45 +905,42 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      player_sword-Photoroom_0: -9183691191101647484
-      player_sword-Photoroom_1: 5719974660971631163
-      player_sword-Photoroom_10: 1819732443877415913
-      player_sword-Photoroom_11: 5793551555365319280
-      player_sword-Photoroom_12: 2042411147569541775
-      player_sword-Photoroom_13: 9180163028910415866
-      player_sword-Photoroom_14: -2108078593013695039
-      player_sword-Photoroom_15: 2671571532330012320
-      player_sword-Photoroom_16: 6049795583520829650
-      player_sword-Photoroom_17: -75746977499122362
-      player_sword-Photoroom_18: -3481959925266997193
-      player_sword-Photoroom_19: -4232145659031121922
-      player_sword-Photoroom_2: 7793809954783109018
-      player_sword-Photoroom_20: 2871619500180754574
-      player_sword-Photoroom_21: -4082668368961970515
-      player_sword-Photoroom_22: 7952282158340513190
-      player_sword-Photoroom_23: -5311040388227379648
-      player_sword-Photoroom_24: -1955766903242920274
-      player_sword-Photoroom_25: -771022523033011424
-      player_sword-Photoroom_26: 1419559848053628138
-      player_sword-Photoroom_27: -6305066187933782293
-      player_sword-Photoroom_28: -6702232171158200757
-      player_sword-Photoroom_29: 4249256731154557421
-      player_sword-Photoroom_3: 2808751497562940141
-      player_sword-Photoroom_30: 768809563864893605
-      player_sword-Photoroom_31: 4931683980207489969
-      player_sword-Photoroom_32: -4269577123148761109
-      player_sword-Photoroom_33: 7571744919348456883
-      player_sword-Photoroom_34: -6542198693012964536
-      player_sword-Photoroom_4: 5993816058237331323
-      player_sword-Photoroom_5: 1116724665278370127
-      player_sword-Photoroom_6: 1604913501756280747
-      player_sword-Photoroom_7: -6936402313083324472
-      player_sword-Photoroom_8: -1429910938358779256
-      player_sword-Photoroom_9: 8877766160776027704
+      Decoration_0: -368401321789775361
+      Decoration_1: -4206819594563279181
+      Decoration_10: 4030208814000181183
+      Decoration_11: -7926080337853386996
+      Decoration_12: -5957907480768474131
+      Decoration_13: -8952722625416497748
+      Decoration_14: -6474815905490174710
+      Decoration_15: 2051757784263316258
+      Decoration_16: 8538422899418973946
+      Decoration_17: 2558546051751004457
+      Decoration_18: -1454307687701597747
+      Decoration_19: 429415279605046377
+      Decoration_2: 566846315969825457
+      Decoration_20: 5575579087702807243
+      Decoration_21: -545380113026382421
+      Decoration_22: 7686115043111144839
+      Decoration_23: 4695875553099044208
+      Decoration_24: 1356666032084300529
+      Decoration_25: 7081662665494935325
+      Decoration_26: -7001666877434044512
+      Decoration_27: 7599613549713535892
+      Decoration_28: 1636361473550653864
+      Decoration_29: 250391886309440160
+      Decoration_3: -983121831306131238
+      Decoration_30: -5171851249027356276
+      Decoration_31: -6087425619873452366
+      Decoration_32: 1282098462555372498
+      Decoration_33: -4280765825412746780
+      Decoration_4: -9150735976156324452
+      Decoration_5: -1050146069433883852
+      Decoration_6: 3754962894339544984
+      Decoration_7: 3872367889646283263
+      Decoration_8: -389087280608379294
+      Decoration_9: 8002333480267911400
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
