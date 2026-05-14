@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "452766042436",
+    "project_id": "refusal-rpg",
+    "storage_bucket": "refusal-rpg.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:452766042436:android:1e26b05ad7f0ff14042f11",
+        "android_client_info": {
+          "package_name": "com.ssafy.slackers"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvYi6Chq66CGAeobI0iyMMWulOksnHcWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
