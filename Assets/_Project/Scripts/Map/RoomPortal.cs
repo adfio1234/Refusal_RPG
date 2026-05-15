@@ -1,7 +1,16 @@
 using UnityEngine;
 
+public enum PortalDestination
+{
+    CombatRoom,
+    HubRoom,
+    GameClear
+}
+
 public class RoomPortal : MonoBehaviour
 {
+    [Header("Portal")]
+    [SerializeField] private PortalDestination destination;
     [SerializeField] private KeyCode interactKey = KeyCode.E;
 
     private GameManager gameManager;
@@ -10,16 +19,45 @@ public class RoomPortal : MonoBehaviour
     private void Awake()
     {
         gameManager = FindFirstObjectByType<GameManager>();
+
+        if (gameManager == null)
+        {
+            Debug.LogError("GameManager를 찾지 못했습니다.");
+        }
     }
 
     private void Update()
     {
-        if (playerInside && Input.GetKeyDown(interactKey))
+        if (!playerInside)
+            return;
+
+        if (Input.GetKeyDown(interactKey))
         {
-            if (gameManager != null)
-            {
+            MoveToDestination();
+        }
+    }
+
+    private void MoveToDestination()
+    {
+        if (gameManager == null)
+        {
+            Debug.LogError("GameManager가 없어서 이동할 수 없습니다.");
+            return;
+        }
+
+        switch (destination)
+        {
+            case PortalDestination.CombatRoom:
                 gameManager.LoadCombatRoom();
-            }
+                break;
+
+            case PortalDestination.HubRoom:
+                gameManager.LoadHubRoom();
+                break;
+
+            case PortalDestination.GameClear:
+                gameManager.GameClear();
+                break;
         }
     }
 
@@ -37,7 +75,6 @@ public class RoomPortal : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInside = false;
-            Debug.Log("포탈에서 벗어남.");
         }
     }
 }

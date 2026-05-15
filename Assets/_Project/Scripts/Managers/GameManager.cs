@@ -26,4 +26,10 @@ public class GameManager : MonoBehaviour
         RoomController room = roomLoader.LoadRoom(combatRoomPrefab);
         playerSpawner.SpawnPlayer(room.PlayerSpawnPoint);
     }
+
+    public void GameClear()
+    {
+        Debug.Log("게임 클리어!");
+        LoadHubRoom();
+    }
 }
