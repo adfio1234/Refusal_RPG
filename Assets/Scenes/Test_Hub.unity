@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &34062370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 34062371}
+  m_Layer: 0
+  m_Name: BackGround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &34062371
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34062370}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7976837639549623142}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1274792626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -220,6 +251,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1632726415355286546, guid: 9b6599607945db74599ecedb57902787, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1632726415355286546, guid: 9b6599607945db74599ecedb57902787, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3219415450799366504, guid: 9b6599607945db74599ecedb57902787, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.47
@@ -296,9 +335,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: HubRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 6164752692062052036, guid: 9b6599607945db74599ecedb57902787, type: 3}
+      propertyPath: m_SortingOrder
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703528844735133905, guid: 9b6599607945db74599ecedb57902787, type: 3}
+      propertyPath: m_Color.b
+      value: 0.43174708
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703528844735133905, guid: 9b6599607945db74599ecedb57902787, type: 3}
+      propertyPath: m_Color.g
+      value: 0.43174708
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703528844735133905, guid: 9b6599607945db74599ecedb57902787, type: 3}
+      propertyPath: m_Color.r
+      value: 0.46540874
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 683792786478938846, guid: 9b6599607945db74599ecedb57902787, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3837738841989685771, guid: 9b6599607945db74599ecedb57902787, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 34062371}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5664167114500486650, guid: 9b6599607945db74599ecedb57902787, type: 3}
       insertIndex: -1
@@ -327,6 +386,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomController
   playerSpawnPoint: {fileID: 5583927244279139046}
+--- !u!4 &7976837639549623142 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3837738841989685771, guid: 9b6599607945db74599ecedb57902787, type: 3}
+  m_PrefabInstance: {fileID: 5583927244279139045}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
