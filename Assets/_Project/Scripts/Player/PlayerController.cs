@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController: MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Move")]
     [SerializeField] private float moveSpeed = 7f;
@@ -11,6 +11,8 @@ public class PlayerController: MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundCheckRadius = 0.15f;
+    [SerializeField] private int maxJumpCount = 2;
+    [SerializeField] private float upwardGroundCheckIgnoreVelocity = 0.05f;
 
     [Header("Attack")]
     [SerializeField] private int attackDamage = 20;
@@ -27,28 +29,42 @@ public class PlayerController: MonoBehaviour
     [SerializeField] private bool canDodgeInAir = false;
 
     private Rigidbody2D rb;
-    
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+
     private float moveInput;
     private float facingDirection = 1f;
 
     private bool isGrounded;
+    private bool wasGrounded;
     private bool isAttacking;
     private bool isDodging;
+
+    private int jumpCount;
 
     private float attackTimer;
     private float dodgeTimer;
     private float dodgeCooldownTimer;
 
-    private Animator animator;
-    private SpriteRenderer spriteRenderer;
-        
-    private void Awake() {
+    private void Awake()
+    {
         rb = GetComponent<Rigidbody2D>();
+
         animator = GetComponent<Animator>();
-        spriteRenderer=GetComponent<SpriteRenderer > ();
+        if (animator == null)
+        {
+            animator = GetComponentInChildren<Animator>();
+        }
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null)
+        {
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        }
     }
 
-    private void Update() {
+    private void Update()
+    {
         CheckGround();
         HandleInput();
         UpdateAttackPointPosition();
@@ -56,8 +72,10 @@ public class PlayerController: MonoBehaviour
         UpdateTimers();
     }
 
-    private void FixedUpdate() {
-        if(isDodging) {
+    private void FixedUpdate()
+    {
+        if (isDodging)
+        {
             rb.linearVelocity = new Vector2(facingDirection * dodgeSpeed, rb.linearVelocity.y);
             return;
         }
@@ -65,49 +83,90 @@ public class PlayerController: MonoBehaviour
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
     }
 
-    private void UpdateAnimation()
+    private void HandleInput()
     {
-        if (animator != null)
-        {
-            bool isRunning = Mathf.Abs(moveInput) > 0.01f;
-            animator.SetBool("IsRunning", isRunning);
-        }
-
-        if(spriteRenderer!=null)
-        {
-            if(moveInput>0)
-            {
-                spriteRenderer.flipX = false;
-            }
-            else if(moveInput<0)
-            {
-                spriteRenderer.flipX = true;
-            }
-        }
-        
-    }
-
-    private void HandleInput() {
         moveInput = Input.GetAxisRaw("Horizontal");
-        if(moveInput != 0) facingDirection = Mathf.Sign(moveInput);
 
-        if (Input.GetKeyDown(KeyCode.T)&&isGrounded) Debug.Log("IsGround");
-        if (Input.GetKeyDown(KeyCode.Z) && isGrounded && !isDodging) Jump();
-        if (Input.GetKeyDown(KeyCode.X) && !isAttacking && !isDodging) Attack();
-        if (Input.GetKeyDown(KeyCode.C) && CanDodge()) Dodge();
+        if (moveInput != 0)
+        {
+            facingDirection = Mathf.Sign(moveInput);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z) && CanJump() && !isDodging)
+        {
+            Jump();
+        }
+
+        if (Input.GetKeyDown(KeyCode.X) && !isAttacking && !isDodging)
+        {
+            Attack();
+        }
+
+        if (Input.GetKeyDown(KeyCode.C) && CanDodge())
+        {
+            Dodge();
+        }
     }
 
-    private void CheckGround() {
-        isGrounded = Physics2D.OverlapCircle(
-            groundCheck.position,
-            groundCheckRadius,
-            groundLayer
-        );
+    private void CheckGround()
+    {
+        bool detectedGround = false;
+
+        /*
+         * 위로 올라가는 중에는 GroundCheck를 무시한다.
+         * 아래에서 통과 가능한 Platform_Tilemap을 지나갈 때
+         * 점프 횟수가 초기화되는 문제를 막기 위함.
+         */
+        bool shouldIgnoreGroundCheck =
+            jumpCount > 0 &&
+            rb.linearVelocity.y > upwardGroundCheckIgnoreVelocity;
+
+        if (!shouldIgnoreGroundCheck)
+        {
+            detectedGround = Physics2D.OverlapCircle(
+                groundCheck.position,
+                groundCheckRadius,
+                groundLayer
+            );
+        }
+
+        isGrounded = detectedGround;
+
+        if (isGrounded)
+        {
+            jumpCount = 0;
+        }
+        else if (wasGrounded && jumpCount == 0)
+        {
+            // 발판에서 그냥 걸어서 떨어진 경우
+            // 공중 점프 1번만 가능하게 처리
+            jumpCount = 1;
+        }
+
+        wasGrounded = isGrounded;
+    }
+
+    private bool CanJump()
+    {
+        if (isGrounded)
+        {
+            return true;
+        }
+
+        return jumpCount < maxJumpCount;
     }
 
     private void Jump()
     {
+        jumpCount++;
+
+        isGrounded = false;
+        wasGrounded = false;
+
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+
+        SetTriggerIfExists("Jump");
+
         Debug.Log("Jump");
     }
 
@@ -115,7 +174,10 @@ public class PlayerController: MonoBehaviour
     {
         isAttacking = true;
         attackTimer = attackDuration;
-        if(attackPoint == null)
+
+        SetTriggerIfExists("Attack");
+
+        if (attackPoint == null)
         {
             Debug.LogWarning("AttackPoint가 연결되지 않았습니다.");
             return;
@@ -127,20 +189,39 @@ public class PlayerController: MonoBehaviour
             enemyLayer
         );
 
-        if (animator != null) animator.SetTrigger("Attack");
-
         HashSet<Health> damagedTargets = new HashSet<Health>();
-        foreach(Collider2D hit in hits)
+
+        foreach (Collider2D hit in hits)
         {
             Health enemyHealth = hit.GetComponentInParent<Health>();
-            if(enemyHealth == null) continue;
-            if(damagedTargets.Contains(enemyHealth)) continue;
+
+            if (enemyHealth == null) continue;
+            if (damagedTargets.Contains(enemyHealth)) continue;
 
             enemyHealth.TakeDamage(attackDamage);
             damagedTargets.Add(enemyHealth);
         }
 
         Debug.Log($"Player Attack. Hit Count: {damagedTargets.Count}");
+    }
+
+    private void Dodge()
+    {
+        isDodging = true;
+        dodgeTimer = dodgeDuration;
+        dodgeCooldownTimer = dodgeCooldown;
+
+        SetTriggerIfExists("Dodge");
+
+        Debug.Log("Dodge");
+    }
+
+    private bool CanDodge()
+    {
+        if (isDodging || dodgeCooldownTimer > 0f) return false;
+        if (!canDodgeInAir && !isGrounded) return false;
+
+        return true;
     }
 
     private void UpdateAttackPointPosition()
@@ -154,49 +235,96 @@ public class PlayerController: MonoBehaviour
         );
     }
 
-    private void Dodge()
+    private void UpdateAnimation()
     {
-        isDodging = true;
-        dodgeTimer = dodgeDuration;
-        dodgeCooldownTimer = dodgeCooldown;
+        bool isRunning = Mathf.Abs(moveInput) > 0.01f;
 
-        Debug.Log("Dodge");
+        SetBoolIfExists("IsRunning", isRunning);
+        SetBoolIfExists("IsGrounded", isGrounded);
+        SetBoolIfExists("IsFalling", rb.linearVelocity.y < -0.1f);
+        SetBoolIfExists("IsDodging", isDodging);
+        SetBoolIfExists("IsAttacking", isAttacking);
+
+        if (spriteRenderer != null)
+        {
+            if (moveInput > 0)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else if (moveInput < 0)
+            {
+                spriteRenderer.flipX = true;
+            }
+        }
     }
 
-    private bool CanDodge()
+    private void SetBoolIfExists(string parameterName, bool value)
     {
-        if(isDodging || dodgeCooldownTimer > 0f) return false;
-        if (!canDodgeInAir && !isGrounded) return false;
+        if (!HasAnimatorParameter(parameterName, AnimatorControllerParameterType.Bool)) return;
 
-        return true;
+        animator.SetBool(parameterName, value);
+    }
+
+    private void SetTriggerIfExists(string parameterName)
+    {
+        if (!HasAnimatorParameter(parameterName, AnimatorControllerParameterType.Trigger)) return;
+
+        animator.SetTrigger(parameterName);
+    }
+
+    private bool HasAnimatorParameter(string parameterName, AnimatorControllerParameterType type)
+    {
+        if (animator == null) return false;
+        if (animator.runtimeAnimatorController == null) return false;
+
+        foreach (AnimatorControllerParameter parameter in animator.parameters)
+        {
+            if (parameter.name == parameterName && parameter.type == type)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private void UpdateTimers()
     {
-        if(isAttacking)
+        if (isAttacking)
         {
             attackTimer -= Time.deltaTime;
-            if (attackTimer <= 0f) isAttacking = false;
+
+            if (attackTimer <= 0f)
+            {
+                isAttacking = false;
+            }
         }
 
-        if(isDodging)
+        if (isDodging)
         {
             dodgeTimer -= Time.deltaTime;
-            if (dodgeTimer <= 0f) isDodging = false;
+
+            if (dodgeTimer <= 0f)
+            {
+                isDodging = false;
+            }
         }
 
-        if(dodgeCooldownTimer > 0f) dodgeCooldownTimer -= Time.deltaTime;
+        if (dodgeCooldownTimer > 0f)
+        {
+            dodgeCooldownTimer -= Time.deltaTime;
+        }
     }
 
     private void OnDrawGizmosSelected()
     {
-        if(groundCheck != null)
+        if (groundCheck != null)
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
         }
 
-        if(attackPoint != null)
+        if (attackPoint != null)
         {
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(attackPoint.position, attackRange);
