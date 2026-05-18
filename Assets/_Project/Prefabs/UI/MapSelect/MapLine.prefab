@@ -88,7 +88,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0773309aeb2d784e94eb50cdd2d1ff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapPathLine
-  fromNode: {fileID: 0}
-  toNode: {fileID: 0}
-  lineRect: {fileID: 2354700085211833418}
-  lineThickness: 6
+  lineImage: {fileID: 1082141261456374880}

@@ -14,7 +14,7 @@ public class MapSelectManager : MonoBehaviour
     [SerializeField] private float startX = -750f;
     [SerializeField] private float xSpacing = 210f;
     [SerializeField] private float ySpacing = 180f;
-    [SerializeField] private float randomYJitter = 35f;
+    [SerializeField] private float randomYJitter = 25f;
 
     [Header("Prefabs")]
     [SerializeField] private MapSelectNode nodePrefab;
@@ -158,9 +158,13 @@ public class MapSelectManager : MonoBehaviour
         currentSelectIndex += direction;
 
         if (currentSelectIndex < 0)
+        {
             currentSelectIndex = selectableNodes.Count - 1;
+        }
         else if (currentSelectIndex >= selectableNodes.Count)
+        {
             currentSelectIndex = 0;
+        }
 
         RefreshCursor();
     }

@@ -5,8 +5,6 @@ public enum RoomType
 {
     Hub,
     Combat,
-    Shop,
-    Treasure,
     Boss
 }
 
@@ -69,18 +67,17 @@ public static class MapRunData
     {
         Columns.Clear();
 
-        // 0번 열: 시작 지점
-        List<MapNodeInfo> startColumn = new List<MapNodeInfo>();
-
-        startColumn.Add(new MapNodeInfo
+        // 0번 열: 시작 노드
+        Columns.Add(new List<MapNodeInfo>
         {
-            depth = 0,
-            index = 0,
-            roomType = RoomType.Hub,
-            anchoredPosition = new Vector2(startX, 0f)
+            new MapNodeInfo
+            {
+                depth = 0,
+                index = 0,
+                roomType = RoomType.Hub,
+                anchoredPosition = new Vector2(startX, 0f)
+            }
         });
-
-        Columns.Add(startColumn);
 
         // 1 ~ routeLength 열 생성
         for (int depth = 1; depth <= routeLength; depth++)
@@ -129,7 +126,7 @@ public static class MapRunData
                 node.nextNodeIndices.Clear();
             }
 
-            // 다음 열 노드들을 현재 열 노드들에게 위→아래 순서로 배분
+            // 다음 열 노드들을 현재 열 노드에게 위->아래 순서로 배분
             for (int nextIndex = 0; nextIndex < nextCount; nextIndex++)
             {
                 int ownerIndex = GetMappedIndex(nextIndex, nextCount, currentCount);
@@ -140,7 +137,7 @@ public static class MapRunData
                 }
             }
 
-            // 현재 열의 모든 노드가 최소 1개 연결을 갖게 보정
+            // 현재 열 모든 노드가 최소 하나는 연결되도록 보정
             for (int currentIndex = 0; currentIndex < currentCount; currentIndex++)
             {
                 MapNodeInfo currentNode = currentColumn[currentIndex];

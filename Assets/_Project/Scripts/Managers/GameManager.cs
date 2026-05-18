@@ -10,12 +10,11 @@ public class GameManager : MonoBehaviour
     [Header("Rooms")]
     [SerializeField] private GameObject hubRoomPrefab;
     [SerializeField] private GameObject combatRoomPrefab;
-    [SerializeField] private GameObject shopRoomPrefab;
-    [SerializeField] private GameObject treasureRoomPrefab;
     [SerializeField] private GameObject bossRoomPrefab;
 
     [Header("Scenes")]
     [SerializeField] private string mapSelectSceneName = "MapSelect";
+    [SerializeField] private string mainMenuSceneName = "MainMenu";
 
     private void Start()
     {
@@ -34,14 +33,6 @@ public class GameManager : MonoBehaviour
                 LoadCombatRoom();
                 break;
 
-            case RoomType.Shop:
-                LoadShopRoom();
-                break;
-
-            case RoomType.Treasure:
-                LoadTreasureRoom();
-                break;
-
             case RoomType.Boss:
                 LoadBossRoom();
                 break;
@@ -50,7 +41,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadHubRoom()
     {
-        SelectedRoomData.ResetRun();
+        SelectedRoomData.SelectRoom(RoomType.Hub);
 
         RoomController room = roomLoader.LoadRoom(hubRoomPrefab);
         playerSpawner.SpawnPlayer(room.PlayerSpawnPoint);
@@ -61,36 +52,6 @@ public class GameManager : MonoBehaviour
         SelectedRoomData.SelectRoom(RoomType.Combat);
 
         RoomController room = roomLoader.LoadRoom(combatRoomPrefab);
-        playerSpawner.SpawnPlayer(room.PlayerSpawnPoint);
-    }
-
-    public void LoadShopRoom()
-    {
-        SelectedRoomData.SelectRoom(RoomType.Shop);
-
-        if (shopRoomPrefab == null)
-        {
-            Debug.LogWarning("ShopRoomPrefab이 없습니다. CombatRoom으로 대체합니다.");
-            LoadCombatRoom();
-            return;
-        }
-
-        RoomController room = roomLoader.LoadRoom(shopRoomPrefab);
-        playerSpawner.SpawnPlayer(room.PlayerSpawnPoint);
-    }
-
-    public void LoadTreasureRoom()
-    {
-        SelectedRoomData.SelectRoom(RoomType.Treasure);
-
-        if (treasureRoomPrefab == null)
-        {
-            Debug.LogWarning("TreasureRoomPrefab이 없습니다. CombatRoom으로 대체합니다.");
-            LoadCombatRoom();
-            return;
-        }
-
-        RoomController room = roomLoader.LoadRoom(treasureRoomPrefab);
         playerSpawner.SpawnPlayer(room.PlayerSpawnPoint);
     }
 
@@ -117,13 +78,17 @@ public class GameManager : MonoBehaviour
 
     public void GameClear()
     {
-        Debug.Log("게임 클리어! 허브로 돌아갑니다.");
-        LoadHubRoom();
+        Debug.Log("게임 클리어!");
+
+        SelectedRoomData.ResetRun();
+        SceneManager.LoadScene(mainMenuSceneName);
     }
 
     public void GameOver()
     {
-        Debug.Log("게임 오버! 허브로 돌아갑니다.");
-        LoadHubRoom();
+        Debug.Log("게임 오버!");
+
+        SelectedRoomData.ResetRun();
+        SceneManager.LoadScene(mainMenuSceneName);
     }
 }

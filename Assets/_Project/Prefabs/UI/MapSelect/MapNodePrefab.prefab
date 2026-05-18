@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2451023211088254779
+--- !u!1 &8072586280398235879
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7057864981353196486}
-  - component: {fileID: 5927460239090502162}
-  - component: {fileID: 5056515821672267393}
-  - component: {fileID: 2406008739633295191}
+  - component: {fileID: 6054008277353465561}
+  - component: {fileID: 3032365630695847628}
+  - component: {fileID: 7136045800661568046}
+  - component: {fileID: 4069576148649129595}
   m_Layer: 5
-  m_Name: Node_Combat
+  m_Name: MapNodePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &7057864981353196486
+--- !u!224 &6054008277353465561
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2451023211088254779}
+  m_GameObject: {fileID: 8072586280398235879}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -35,24 +35,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 23}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &5927460239090502162
+--- !u!222 &3032365630695847628
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2451023211088254779}
+  m_GameObject: {fileID: 8072586280398235879}
   m_CullTransparentMesh: 1
---- !u!114 &5056515821672267393
+--- !u!114 &7136045800661568046
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2451023211088254779}
+  m_GameObject: {fileID: 8072586280398235879}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3cde4d3091db66c4e86b799ae3196fd6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -76,21 +76,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2406008739633295191
+--- !u!114 &4069576148649129595
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2451023211088254779}
+  m_GameObject: {fileID: 8072586280398235879}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b2a66d82cfa82e47b63f80de207283e, type: 3}
+  m_Script: {fileID: 11500000, guid: 22e295556972372449c8646fe2d08e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapSelectNode
-  nodeImage: {fileID: 0}
-  combatSprite: {fileID: 0}
-  bossSprite: {fileID: 0}
-  shopSprite: {fileID: 0}
-  treasureSprite: {fileID: 0}
+  nodeImage: {fileID: 7136045800661568046}
   startSprite: {fileID: 0}
+  combatSprite: {fileID: 21300000, guid: 3cde4d3091db66c4e86b799ae3196fd6, type: 3}
+  bossSprite: {fileID: 21300000, guid: ba1477f421faaeb4991203d5ba4335c7, type: 3}

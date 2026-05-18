@@ -22,12 +22,14 @@ public class MapPathLine : MonoBehaviour
         lineRect.rotation = Quaternion.Euler(0f, 0f, angle);
 
         if (lineImage == null)
+        {
             lineImage = GetComponent<Image>();
+        }
 
         if (lineImage != null)
         {
             lineImage.color = activeLine
-                ? new Color(1f, 0.85f, 0.35f, 1f)
+                ? new Color(1f, 0.8f, 0.25f, 1f)
                 : new Color(0.25f, 0.25f, 0.25f, 0.65f);
         }
     }
