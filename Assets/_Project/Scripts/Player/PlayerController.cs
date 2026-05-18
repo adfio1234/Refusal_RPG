@@ -14,6 +14,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int maxJumpCount = 2;
     [SerializeField] private float upwardGroundCheckIgnoreVelocity = 0.05f;
 
+    [Header("Jump Feel")]
+    [SerializeField] private float coyoteTime = 0.12f;
+    [SerializeField] private float jumpBufferTime = 0.12f;
+    [SerializeField] private float fallGravityMultiplier = 2.5f;
+    [SerializeField] private float lowJumpGravityMultiplier = 2f;
+
     [Header("Attack")]
     [SerializeField] private int attackDamage = 20;
     [SerializeField] private float attackDuration = 0.2f;
@@ -36,11 +42,13 @@ public class PlayerController : MonoBehaviour
     private float facingDirection = 1f;
 
     private bool isGrounded;
-    private bool wasGrounded;
     private bool isAttacking;
     private bool isDodging;
 
     private int jumpCount;
+
+    private float coyoteTimer;
+    private float jumpBufferTimer;
 
     private float attackTimer;
     private float dodgeTimer;
@@ -81,6 +89,8 @@ public class PlayerController : MonoBehaviour
         }
 
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+
+        ApplyBetterJumpGravity();
     }
 
     private void HandleInput()
@@ -92,9 +102,15 @@ public class PlayerController : MonoBehaviour
             facingDirection = Mathf.Sign(moveInput);
         }
 
-        if (Input.GetKeyDown(KeyCode.Z) && CanJump() && !isDodging)
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            jumpBufferTimer = jumpBufferTime;
+        }
+
+        if (jumpBufferTimer > 0f && CanJump() && !isDodging)
         {
             Jump();
+            jumpBufferTimer = 0f;
         }
 
         if (Input.GetKeyDown(KeyCode.X) && !isAttacking && !isDodging)
@@ -112,11 +128,6 @@ public class PlayerController : MonoBehaviour
     {
         bool detectedGround = false;
 
-        /*
-         * 위로 올라가는 중에는 GroundCheck를 무시한다.
-         * 아래에서 통과 가능한 Platform_Tilemap을 지나갈 때
-         * 점프 횟수가 초기화되는 문제를 막기 위함.
-         */
         bool shouldIgnoreGroundCheck =
             jumpCount > 0 &&
             rb.linearVelocity.y > upwardGroundCheckIgnoreVelocity;
@@ -134,21 +145,28 @@ public class PlayerController : MonoBehaviour
 
         if (isGrounded)
         {
+            coyoteTimer = coyoteTime;
             jumpCount = 0;
         }
-        else if (wasGrounded && jumpCount == 0)
+        else
         {
-            // 발판에서 그냥 걸어서 떨어진 경우
-            // 공중 점프 1번만 가능하게 처리
-            jumpCount = 1;
-        }
+            coyoteTimer -= Time.deltaTime;
 
-        wasGrounded = isGrounded;
+            if (coyoteTimer <= 0f && jumpCount == 0)
+            {
+                jumpCount = 1;
+            }
+        }
     }
 
     private bool CanJump()
     {
         if (isGrounded)
+        {
+            return true;
+        }
+
+        if (coyoteTimer > 0f)
         {
             return true;
         }
@@ -161,13 +179,31 @@ public class PlayerController : MonoBehaviour
         jumpCount++;
 
         isGrounded = false;
-        wasGrounded = false;
+        coyoteTimer = 0f;
 
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
 
         SetTriggerIfExists("Jump");
 
         Debug.Log("Jump");
+    }
+
+    private void ApplyBetterJumpGravity()
+    {
+        if (rb.linearVelocity.y < 0f)
+        {
+            rb.linearVelocity += Vector2.up *
+                Physics2D.gravity.y *
+                (fallGravityMultiplier - 1f) *
+                Time.fixedDeltaTime;
+        }
+        else if (rb.linearVelocity.y > 0f && !Input.GetKey(KeyCode.Z))
+        {
+            rb.linearVelocity += Vector2.up *
+                Physics2D.gravity.y *
+                (lowJumpGravityMultiplier - 1f) *
+                Time.fixedDeltaTime;
+        }
     }
 
     private void Attack()
@@ -290,6 +326,11 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateTimers()
     {
+        if (jumpBufferTimer > 0f)
+        {
+            jumpBufferTimer -= Time.deltaTime;
+        }
+
         if (isAttacking)
         {
             attackTimer -= Time.deltaTime;

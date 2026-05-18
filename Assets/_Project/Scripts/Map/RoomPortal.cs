@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum PortalDestination
 {
     CombatRoom,
     HubRoom,
-    GameClear
+    GameClear,
+    MapSelect,
+    CompleteRoom
 }
 
 public class RoomPortal : MonoBehaviour
@@ -13,17 +16,15 @@ public class RoomPortal : MonoBehaviour
     [SerializeField] private PortalDestination destination;
     [SerializeField] private KeyCode interactKey = KeyCode.E;
 
+    [Header("Scene")]
+    [SerializeField] private string mapSelectSceneName = "MapSelect";
+
     private GameManager gameManager;
     private bool playerInside;
 
     private void Awake()
     {
         gameManager = FindFirstObjectByType<GameManager>();
-
-        if (gameManager == null)
-        {
-            Debug.LogError("GameManager를 찾지 못했습니다.");
-        }
     }
 
     private void Update()
@@ -39,24 +40,30 @@ public class RoomPortal : MonoBehaviour
 
     private void MoveToDestination()
     {
-        if (gameManager == null)
-        {
-            Debug.LogError("GameManager가 없어서 이동할 수 없습니다.");
-            return;
-        }
-
         switch (destination)
         {
             case PortalDestination.CombatRoom:
-                gameManager.LoadCombatRoom();
+                if (gameManager != null)
+                    gameManager.LoadCombatRoom();
                 break;
 
             case PortalDestination.HubRoom:
-                gameManager.LoadHubRoom();
+                if (gameManager != null)
+                    gameManager.LoadHubRoom();
                 break;
 
             case PortalDestination.GameClear:
-                gameManager.GameClear();
+                if (gameManager != null)
+                    gameManager.GameClear();
+                break;
+
+            case PortalDestination.MapSelect:
+                SceneManager.LoadScene(mapSelectSceneName);
+                break;
+
+            case PortalDestination.CompleteRoom:
+                if (gameManager != null)
+                    gameManager.CompleteNormalRoom();
                 break;
         }
     }

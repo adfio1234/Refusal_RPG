@@ -9,7 +9,7 @@ public class MainMenuController : MonoBehaviour
 
     [Header("Fade")]
     [SerializeField] private CanvasGroup fadeGroup;
-    [SerializeField] private float fadeDuration = 0.2f;
+    [SerializeField] private float fadeDuration = 0.25f;
 
     [Header("Sound")]
     [SerializeField] private AudioSource audioSource;
@@ -37,6 +37,9 @@ public class MainMenuController : MonoBehaviour
     private IEnumerator StartGameRoutine()
     {
         isStarting = true;
+
+        // 새 게임 시작 시 무조건 Hub에서 시작하도록 초기화
+        SelectedRoomData.ResetRun();
 
         if (audioSource != null && buttonClickSound != null)
         {

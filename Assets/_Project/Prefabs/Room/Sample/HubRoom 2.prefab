@@ -1625,6 +1625,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3837738841989685771}
     m_Modifications:
+    - target: {fileID: 1983647611765234646, guid: 8ac18b21a486e674780d0fdc13538fb3, type: 3}
+      propertyPath: destination
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3867841596607806948, guid: 8ac18b21a486e674780d0fdc13538fb3, type: 3}
       propertyPath: m_Name
       value: Portal
